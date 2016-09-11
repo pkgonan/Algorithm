@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge;
+package BackjoonOnlineJudge.DynamicProgramming;
 
 import java.util.Scanner;
 
