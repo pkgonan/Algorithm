@@ -8,6 +8,8 @@ public class Problem_2589 {
     public static int MAX = 0;
     public static int N, M;
     public static String[][] map;
+    public static int[] dx = {-1, 1, 0, 0};
+    public static int[] dy = {0, 0, -1, 1};
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -16,7 +18,7 @@ public class Problem_2589 {
         map = new String[N][M];
         String s;
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {    //입력 받는 부분
             s = sc.next();
             for (int j = 0; j < M; j++)
                 map[i][j] = String.valueOf(s.charAt(j));
@@ -24,7 +26,7 @@ public class Problem_2589 {
 
         for (int i = 0; i < N; i++)
             for (int j = 0; j < M; j++) {
-                if (map[i][j].equals("L")) {
+                if (map[i][j].equals("L")) { //
                     Queue<Data> q = new LinkedList<>();
                     int[][] visited = new int[N][M];
                     int[][] count = new int[N][M];
@@ -42,36 +44,25 @@ public class Problem_2589 {
             if (MAX < count[data.x][data.y])
                 MAX = count[data.x][data.y];
 
-            if (promising(data.x - 1, data.y, q, visited)) { //위
-                visited[data.x - 1][data.y] = 1;
-                count[data.x - 1][data.y] = count[data.x][data.y] + 1;
-                q.add(new Data(data.x - 1, data.y));
-            }
-            if (promising(data.x + 1, data.y, q, visited)) { //아래
-                visited[data.x + 1][data.y] = 1;
-                count[data.x + 1][data.y] = count[data.x][data.y] + 1;
-                q.add(new Data(data.x + 1, data.y));
-            }
-            if (promising(data.x, data.y - 1, q, visited)) { //왼쪽
-                visited[data.x][data.y - 1] = 1;
-                count[data.x][data.y - 1] = count[data.x][data.y] + 1;
-                q.add(new Data(data.x, data.y - 1));
-            }
-            if (promising(data.x, data.y + 1, q, visited)) { //오른쪽
-                visited[data.x][data.y + 1] = 1;
-                count[data.x][data.y + 1] = count[data.x][data.y] + 1;
-                q.add(new Data(data.x, data.y + 1));
+            for (int i = 0; i < 4; i++) {
+                int nx = data.x + dx[i];
+                int ny = data.y + dy[i];
+                if (promising(nx, ny, q, visited)) {
+                    visited[nx][ny] = 1;
+                    count[nx][ny] = count[data.x][data.y] + 1;
+                    q.add(new Data(nx, ny));
+                }
             }
         }
     }
 
     public static boolean promising(int i, int j, Queue<Data> q, int[][] visited) {
         boolean result = true;
-        if (i < 0 || i >= N || j < 0 || j >= M)
+        if (i < 0 || i >= N || j < 0 || j >= M) // 배열의 범위 초과 시
             result = false;
-        if (i >= 0 && i < N && j >= 0 && j < M && visited[i][j] == 1)
+        if (i >= 0 && i < N && j >= 0 && j < M && visited[i][j] == 1) // 이미 방문한 곳일 시
             result = false;
-        if (i >= 0 && i < N && j >= 0 && j < M && map[i][j].equals("W"))
+        if (i >= 0 && i < N && j >= 0 && j < M && map[i][j].equals("W")) //땅이 아닐 시
             result = false;
         return result;
     }
