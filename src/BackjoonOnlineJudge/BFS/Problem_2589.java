@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.DynamicProgramming.BFS;
+package BackjoonOnlineJudge.BFS;
 
 import java.util.LinkedList;
 import java.util.Queue;
