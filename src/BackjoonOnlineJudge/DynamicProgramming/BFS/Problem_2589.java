@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.DynamicProgramming;
+package BackjoonOnlineJudge.DynamicProgramming.BFS;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -32,13 +32,13 @@ public class Problem_2589 {
                     int[][] count = new int[N][M];
                     visited[i][j] = 1;
                     q.add(new Data(i, j));
-                    search(q, visited, count);
+                    BFS(q, visited, count);
                 }
             }
         System.out.println(MAX);
     }
 
-    public static void search(Queue<Data> q, int[][] visited, int[][] count) {
+    public static void BFS(Queue<Data> q, int[][] visited, int[][] count) {
         while (!q.isEmpty()) {
             Data data = q.poll();
             if (MAX < count[data.x][data.y])
