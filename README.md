@@ -13,6 +13,12 @@
 
 **- MST**
 
+**- Dijkstra**
+
+**- TopologySort**
+
+**- BitMask**
+
 **- ...**
 
 # Use
