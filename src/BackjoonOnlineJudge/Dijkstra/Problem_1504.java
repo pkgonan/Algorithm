@@ -61,7 +61,6 @@ public class Problem_1504 {
                     dis[next.v] = Math.min(dis[next.v], dis[now.v] + next.w);
                     pq.add(new Point(next.v, next.w));
                 }
-
             }
         }
     }
