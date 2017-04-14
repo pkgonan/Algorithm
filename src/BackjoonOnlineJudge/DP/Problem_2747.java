@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Problem_2747 {
     static int N;
-    static long[] DP;
+    static int[] DP;
 
     public static void main(String[] args) throws IOException{
         init();
@@ -14,20 +14,16 @@ public class Problem_2747 {
     }
 
     static void start(){
-        DP[0] = 0;
+        DP[0] = 0; DP[1] = 1;
 
-        if(N==0) System.out.println(0);
-        else {
-            DP[1] = 1;
-            for (int i = 2; i <= N; i++)
-                DP[i] = DP[i - 1] + DP[i - 2];
-            System.out.println(DP[N]);
-        }
+        for(int i=2; i<=N; i++)
+            DP[i] = DP[i-1] + DP[i-2];
+        System.out.println(DP[N]);
     }
 
     static void init() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
-        DP = new long[N+1];
+        DP = new int[N+1];
     }
 }
