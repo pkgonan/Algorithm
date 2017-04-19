@@ -19,6 +19,8 @@
 
 **- BitMask**
 
+**- String**
+
 **- ...**
 
 # Use
