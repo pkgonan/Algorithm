@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.ACM_ICPC.Simulation;
+package BackjoonOnlineJudge.Contest.ACM_ICPC.Simulation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
