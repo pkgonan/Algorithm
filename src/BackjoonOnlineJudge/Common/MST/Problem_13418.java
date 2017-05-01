@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.MST;
+package BackjoonOnlineJudge.Common.MST;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
