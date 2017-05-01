@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.BitMask;
+package BackjoonOnlineJudge.Common.BitMask;
 
 import java.io.BufferedReader;
 import java.io.IOException;
