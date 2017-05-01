@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.TopologySort;
+package BackjoonOnlineJudge.Common.TopologySort;
 
 import java.util.*;
 
