@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.String;
+package BackjoonOnlineJudge.Common.String;
 
 import java.io.BufferedReader;
         import java.io.IOException;
