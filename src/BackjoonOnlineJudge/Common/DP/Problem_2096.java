@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.DP;
+package BackjoonOnlineJudge.Common.DP;
 
 import java.util.Scanner;
 
