@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.Dijkstra;
+package BackjoonOnlineJudge.Common.Dijkstra;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
