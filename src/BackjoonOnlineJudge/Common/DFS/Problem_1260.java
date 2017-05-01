@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.DFS;
+package BackjoonOnlineJudge.Common.DFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
