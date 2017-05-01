@@ -1,4 +1,4 @@
-package BackjoonOnlineJudge.Samsung;
+package BackjoonOnlineJudge.Common.Samsung;
 
 import java.io.BufferedReader;
 import java.io.IOException;
