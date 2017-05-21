@@ -25,6 +25,8 @@
 
 **- MST**
 
+**- LIS**
+
 **- Dijkstra**
 
 **- TopologySort**
