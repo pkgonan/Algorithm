@@ -25,6 +25,8 @@
 
 **- MST**
 
+**- Disjoint-Set**
+
 **- LIS**
 
 **- Dijkstra**
