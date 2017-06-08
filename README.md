@@ -33,6 +33,10 @@
 
 **- Dijkstra**
 
+**- Bellman-Ford**
+
+**- Floyd-Warshall**
+
 **- TopologySort**
 
 **- BitMask**
