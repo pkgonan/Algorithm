@@ -31,6 +31,8 @@
 
 **- LCS**
 
+**- Segment Tree**
+
 **- Dijkstra**
 
 **- Bellman-Ford**
