@@ -43,6 +43,8 @@
 
 **- BitMask**
 
+**- Geometry**
+
 **- String**
 
 **- ...**
