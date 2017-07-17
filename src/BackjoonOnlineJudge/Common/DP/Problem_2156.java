@@ -3,32 +3,24 @@ package BackjoonOnlineJudge.Common.DP;
 import java.util.Scanner;
 
 public class Problem_2156 {
-    int N;
-    int[] dp;
-    int[] cup;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
 
-    public void printResult(){
-        dp[1] = cup[1];
-        if(N>=2) {
-            dp[2] = cup[1] + cup[2];
-            for (int i = 3; i <= N; i++)
-                dp[i] = MAX(cup[i] + cup[i - 1] + dp[i - 3], cup[i] + dp[i - 2], dp[i - 1]);
-        }
-        System.out.println(dp[N]);
-    }
+        int N = sc.nextInt();
 
-    private int MAX(int first, int second, int third){
-        int max = Math.max(first, second);
-        return Math.max(max, third);
-    }
-
-    public void init(){
-        Scanner scanner = new Scanner(System.in);
-        N = scanner.nextInt();
-        dp = new int[N+1];
-        cup = new int[N+1];
+        int[] arr = new int[N+1];
         for(int i=1; i<=N; i++)
-            cup[i] = scanner.nextInt();
-        scanner.close();
+            arr[i] = sc.nextInt();
+
+        int[] dp = new int[N+1];
+        dp[1] = arr[1];
+        if(N>=2) dp[2] = arr[1] + arr[2];
+
+        for(int i=3; i<=N; i++) {
+            dp[i] = Math.max(dp[i-1], dp[i-2] + arr[i]);
+            dp[i] = Math.max(dp[i], dp[i-3] + arr[i-1] + arr[i]);
+        }
+
+        System.out.println(dp[N]);
     }
 }
