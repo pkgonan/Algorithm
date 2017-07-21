@@ -23,6 +23,8 @@
 
 **- DFS**
 
+**- BST**
+
 **- MST**
 
 **- Disjoint-Set**
