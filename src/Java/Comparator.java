@@ -44,27 +44,39 @@ public class Comparator {
         }
 
         private int firstCompare(Person o1, Person o2) {
-            return o2.name.compareTo(o1.name);
+            return o2.getName().compareTo(o1.getName());
         }
 
         private int secondCompare(Person o1, Person o2) {
-            return o2.age.compareTo(o1.age);
+            return o2.getAge().compareTo(o1.getAge());
         }
 
         private int thirdCompare(Person o1, Person o2) {
-            return o2.address.compareTo(o1.address);
+            return o2.getAddress().compareTo(o1.getAddress());
         }
     }
 
     private static class Person {
-        String name;
-        Integer age;
-        String address;
+        private String name;
+        private Integer age;
+        private String address;
 
-        Person(String name, Integer age, String address){
+        Person(final String name, final Integer age, final String address){
             this.name = name;
             this.age = age;
             this.address = address;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Integer getAge() {
+            return age;
+        }
+
+        public String getAddress() {
+            return address;
         }
 
         @Override
@@ -74,12 +86,27 @@ public class Comparator {
 
         @Override
         public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+
             if (!(obj instanceof Person)) {
                 return false;
             }
 
             Person obj1 = (Person) obj;
             return this.name.equals(obj1.name) && this.age.equals(obj1.age) && this.address.equals(obj1.address);
+        }
+
+        @Override
+        public int hashCode() {
+            int result = 17;
+
+            result = 31 * result + name.hashCode();
+            result = 31 * result + age;
+            result = 31 * result + address.hashCode();
+
+            return result;
         }
     }
 }
